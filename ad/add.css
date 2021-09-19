@@ -64,9 +64,169 @@ header h1 {
   color: var(--text-color-dark);
 }
 
+/*PAGE CONTENT*/
 .page-content {
   width: 100%;
-  height: 1000px;
+  height: 600px;
+  overflow: hidden;
+}
+
+.employer-details-container {
+  float:left;
+  box-shadow: 0px 6px 40px 5px rgba(0, 0, 0, 0.05);
+  width: 300px;
+  height: 440px;
+  margin-left: 10%;
+  margin-top: 5%;
+}
+
+.employer-details-title {
+  font-family: Poppins;
+  font-size: 24px;
+  font-weight: 600;
+  background: var(--primary-color);
+  color: #FFFFFF;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.employer-photo {
+  display: block;
+  margin: auto;
+  margin-top: 40px;
+  width: 143px;
+  height: 114px;
+  border-radius: 20px;
+}
+
+.employer-details {
+  margin-top: 50px;
+}
+
+.employer-details-text {
+  font-family: Poppins;
+  font-size: 15px;
+  font-weight: normal;
+  margin-left: 15%;
+  margin-top: 20px;
+}
+
+.ad-details-container {
+  float:left;
+  margin-top: 5%;
+  margin-left: 10%;
+  overflow: hidden;
+}
+
+.first-container {
+  float: left;
+  height: 150px;
+}
+
+.address-container {
+  display: flex;
+  align-items: center;
+}
+
+.address-logo {
+  width: 44px;
+  height: 50px;
+}
+
+.address-text-city {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  color: #B9B9B9;
+}
+
+.address-text-street {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  margin-left: 45px;
+  color: #364958;
+}
+
+.second-container {
+  float: left;
+  height: 150px;
+  margin-left: 400px;
+}
+
+.application-deadline-text {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  color: #828282;
+}
+
+.button-apply {
+  text-align: center;
+  border: 3px solid #464660;
+  width: 300px;
+  height: 75px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  color: #464660;
+  background-color: white;
+  margin-top: 20px;
+}
+
+.ad-category {
+  background-color: var(--primary-color);
+  margin-top: 20px;
+  margin-left: 25px;
+  width: 150px;
+  height: 28px;
+  border-radius: 50px;
+  text-align: center;
+}
+
+.ad-category-text {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  color: white;
+}
+
+.ad-description-container {
+  margin-top: 170px;
+}
+
+.ad-description-title {
+  margin-left: 25px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  color: #364958;
+}
+
+.ad-description-text {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  margin-left: 25px;
+  margin-top: 10px;
+}
+
+.fee-text {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  margin-left: 25px;
+  margin-top: 140px;
 }
 
 /* FOOTER */
