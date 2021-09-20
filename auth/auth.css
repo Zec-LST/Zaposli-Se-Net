@@ -145,18 +145,22 @@ header h1 {
 .login-left-container {
   float: left;
   background-color: #F7F7F7;
-  width: 45%;
+  width: 600px;
   height: 500px;
   border-radius: 10px;
   margin: 5% auto;
-  margin-left: 150px;
+  margin-left: 100px;
   padding-top: 70px;
 }
 
 .login-right-container {
   float: left;
   margin: 5% auto;
-  margin-left: 60px;
+  margin-left: 30px;
+}
+
+.login-photo {
+  width: 700px;
 }
 
 .button-login {
@@ -171,7 +175,7 @@ header h1 {
   color: #464660;
   background-color: white;
   margin-top: 60px;
-  margin-left: 35%;
+  margin-left: 160px;
 }
 
 .login-text {
@@ -180,7 +184,7 @@ header h1 {
   font-weight: normal;
   font-size: 16px;
   color: #464660;
-  margin-left: 40%;
+  margin-left: 210px;
 }
 
 .login-form label{
@@ -189,18 +193,18 @@ header h1 {
   font-weight: 600;
   font-size: 20px;
   color: #B9B9B9;
-  margin-left: 22%;
+  margin-left: 40px;
 }
 
 .login-input {
   border:0;
-  width: 500px;
+  width: 520px;
   height: 45px;
   border-radius: 10px;
   border-color: #FFFFFF;
   background: #FFFFFF;
   margin-bottom: 20px;
-  margin-left: 22%;
+  margin-left: 40px;
 }
 
 /* FOOTER */

@@ -16,7 +16,7 @@
   <body>
     <header>
       <a class="back-btn" href="/">< Nazad</a>
-      <h1>Title</h1>
+      <h1>Prijava</h1>
       <div class="logo">
         <a href="/">Zaposlise.net</a>
       </div>
