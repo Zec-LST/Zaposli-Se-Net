@@ -1,5 +1,7 @@
 <?php
-
+  if(isset($_COOKIE['employer'])){
+      header("Location: ../employer/dashboard.php");
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -23,29 +25,25 @@
     </header>
 
     <div class="page-content">
-      <form class="login-form">
+      <form class="login-form" action="../database/validate.php" method="post">
         <div class="login-container">
           <div class="login-left-container">
-              <div class="input-container">
-                <label for="email">E-mail: </label> <br>
-                <input class="login-input" type="text" name="email" id="user_email" >
-              </div>
-
-              <div class="input-container">
-                <label for="password">Lozinka: </label> <br>
-                <input class="login-input" type="password" name="password" id="user_password" >
-              </div>
-
-              <button type='button' aria-label='Pritisnuti za prijavu'
-                class='button-login'>PRIJAVI SE
-              </button>
-
-              <div class="login-text"><p>Nemaš račun?
-                <b>Kreiraj ga</b></p>
-              </div>
-        </div>
-        <div class="login-right-container">
-          <img class="login-photo" src="..\images\image-login.png">
+            <p>
+              <label for="email">E-mail: </label> <br>
+              <input class="login-input" type="text" name="email" id="user_email" >
+            </p>
+            <p>
+              <label for="password">Lozinka: </label> <br>
+              <input class="login-input" type="text" name="password" id="user_password" >
+            </p>
+            <button type='submit' aria-label='Pritisnuti za prijavu'
+              class='button-login'>PRIJAVI SE
+            </button>
+            <p class="login-text"><br>Nemaš račun?
+              <b>Kreiraj ga</b></p>
+          </div>
+          <div class="login-right-container">
+            <img class="login-photo" src="..\images\image-login.png">
         </div>
       </form>
     </div>

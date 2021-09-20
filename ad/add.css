@@ -64,147 +64,169 @@ header h1 {
   color: var(--text-color-dark);
 }
 
+/*PAGE CONTENT*/
 .page-content {
   width: 100%;
-  height: 700px;
+  height: 600px;
+  overflow: hidden;
 }
 
-/*REGISTRATION*/
-.registration-form {
-  background-color: #F7F7F7;
-  width: 80%;
-  height: 500px;
-  border-radius: 10px;
-  margin: 5% auto;
+.employer-details-container {
+  float:left;
+  box-shadow: 0px 6px 40px 5px rgba(0, 0, 0, 0.05);
+  width: 300px;
+  height: 440px;
+  margin-left: 10%;
+  margin-top: 5%;
+}
+
+.employer-details-title {
+  font-family: Poppins;
+  font-size: 24px;
+  font-weight: 600;
+  background: var(--primary-color);
+  color: #FFFFFF;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.employer-photo {
   display: block;
+  margin: auto;
+  margin-top: 40px;
+  width: 143px;
+  height: 114px;
+  border-radius: 20px;
 }
 
-.registration-container {
+.employer-details {
+  margin-top: 50px;
+}
+
+.employer-details-text {
+  font-family: Poppins;
+  font-size: 15px;
+  font-weight: normal;
+  margin-left: 15%;
+  margin-top: 20px;
+}
+
+.ad-details-container {
+  float:left;
+  margin-top: 5%;
+  margin-left: 10%;
   overflow: hidden;
 }
 
-.registration-left-container {
+.first-container {
   float: left;
-  margin-left: 60px;
-  margin-top: 60px;
+  height: 150px;
 }
 
-.registration-right-container {
-  float: left;
-  margin-left: 90px;
-  margin-top: 60px;
+.address-container {
+  display: flex;
+  align-items: center;
 }
 
-.registration-form label{
+.address-logo {
+  width: 44px;
+  height: 50px;
+}
+
+.address-text-city {
   font-family: Poppins;
   font-style: normal;
   font-weight: 600;
-  font-size: 20px;
-  color: #B9B9B9
-}
-
-.registration-input {
-  border:0;
-  width: 500px;
-  height: 45px;
-  border-radius: 10px;
-  border-color: #FFFFFF;
-  background: #FFFFFF;
-  margin-bottom: 20px;
-}
-
-.button-register {
-  text-align: center;
-  border: 3px solid #464660;
-  width: 300px;
-  height: 75px;
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 24px;
-  color: #464660;
-  background-color: white;
-  margin-top: 60px;
-  margin-left: 20%;
-}
-
-.registration-text {
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: normal;
   font-size: 16px;
-  color: #464660;
-  margin-left: 22%;
-}
-
-/*LOGIN*/
-.login-container {
-  overflow: hidden;
-}
-
-.login-left-container {
-  float: left;
-  background-color: #F7F7F7;
-  width: 600px;
-  height: 500px;
-  border-radius: 10px;
-  margin: 5% auto;
-  margin-left: 100px;
-  padding-top: 70px;
-}
-
-.login-right-container {
-  float: left;
-  margin: 5% auto;
-  margin-left: 30px;
-}
-
-.login-photo {
-  width: 700px;
-}
-
-.button-login {
-  text-align: center;
-  border: 3px solid #464660;
-  width: 300px;
-  height: 75px;
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 24px;
-  color: #464660;
-  background-color: white;
-  margin-top: 60px;
-  margin-left: 160px;
-}
-
-.login-text {
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  color: #464660;
-  margin-left: 210px;
-}
-
-.login-form label{
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
   color: #B9B9B9;
-  margin-left: 40px;
 }
 
-.login-input {
-  border:0;
-  width: 520px;
-  height: 45px;
-  border-radius: 10px;
-  border-color: #FFFFFF;
-  background: #FFFFFF;
-  margin-bottom: 20px;
-  margin-left: 40px;
+.address-text-street {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  margin-left: 45px;
+  color: #364958;
+}
+
+.second-container {
+  float: left;
+  height: 150px;
+  margin-left: 400px;
+}
+
+.application-deadline-text {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  color: #828282;
+}
+
+.button-apply {
+  text-align: center;
+  border: 3px solid #464660;
+  width: 300px;
+  height: 75px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  color: #464660;
+  background-color: white;
+  margin-top: 20px;
+}
+
+.ad-category {
+  background-color: var(--primary-color);
+  margin-top: 20px;
+  margin-left: 25px;
+  width: 150px;
+  height: 28px;
+  border-radius: 50px;
+  text-align: center;
+}
+
+.ad-category-text {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  color: white;
+}
+
+.ad-description-container {
+  margin-top: 170px;
+}
+
+.ad-description-title {
+  margin-left: 25px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  color: #364958;
+}
+
+.ad-description-text {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  margin-left: 25px;
+  margin-top: 10px;
+}
+
+.fee-text {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  margin-left: 25px;
+  margin-top: 140px;
 }
 
 /* FOOTER */
