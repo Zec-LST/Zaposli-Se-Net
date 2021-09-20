@@ -24,8 +24,8 @@
         <div class="dropdown">
           <button class="dropbtn">Poslodavac</button>
           <div class="dropdown-content">
-            <a href="/">Prijava</a>
-            <a href="/">Registracija</a>
+            <a href="/auth/login.php">Prijava</a>
+            <a href="/auth/registration.php">Registracija</a>
             <a href="/">Forum</a>
           </div>
         </div>
