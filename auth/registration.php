@@ -16,14 +16,50 @@
   <body>
     <header>
       <a class="back-btn" href="/">< Nazad</a>
-      <h1>Title</h1>
+      <h1>Registracija</h1>
       <div class="logo">
         <a href="/">Zaposlise.net</a>
       </div>
     </header>
 
     <div class="page-content">
-
+      <form class="registration-form">
+        <div class="registration-container">
+          <div class="registration-left-container">
+            <p>
+              <label for="name">Ime i prezime: </label> <br>
+              <input class="registration-input" type="text" name="name" id="user_name" >
+            </p>
+            <p>
+              <label for="email">E-mail: </label> <br>
+              <input class="registration-input" type="text" name="email" id="user_email" >
+            </p>
+            <p>
+              <label for="password">Lozinka: </label> <br>
+              <input class="registration-input" type="text" name="password" id="user_password" >
+            </p>
+            <p>
+              <label for="number">Kontakt broj: </label> <br>
+              <input class="registration-input" type="text" name="number" id="user_number" >
+            </p>
+          </div>
+          <div class="registration-right-container">
+            <p>
+              <label for="company-name">Ime tvrtke: </label> <br>
+              <input class="registration-input" type="text" name="company-name" id="user_companyName" >
+            </p>
+            <p>
+              <label for="company-location">Sjedište tvrtke: </label> <br>
+              <input class="registration-input" type="text" name="company-location" id="user_companyLocation" >
+            </p>
+            <button type='button' aria-label='Pritisnuti za registaciju'
+              class='button-register'>REGISTRIRAJ SE
+            </button>
+            <p class="registration-text"><br>Već imaš kreiran račun?
+              <b>Prijavi se</b></p>
+          </div>
+        </div>
+      </form>
     </div>
 
     <footer>

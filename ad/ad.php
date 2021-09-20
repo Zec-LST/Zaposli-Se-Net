@@ -23,7 +23,40 @@
     </header>
 
     <div class="page-content">
-
+      <div class="employer-details-container">
+        <h2 class="employer-details-title">Poslodavac</h2>
+        <img class="employer-photo" src="https://www.colorhexa.com/c4c4c4.png" alt="Slika poslodavca">
+        <div class="employer-details">
+          <h3 class="employer-details-text">Ime firme</h3>
+          <h3 class="employer-details-text">Adresa</h3>
+          <h3 class="employer-details-text">Kontakt broj</h3>
+        </div>
+      </div>
+      <div class="ad-details-container">
+        <div class="first-container">
+          <div class="address-container">
+            <img class="address-logo" src="/images/icon-location.svg" alt="Logo adrese">
+            <span class="address-text-city"> GRAD, ŽUPANIJA <br> </span>
+          </div>
+          <span class="address-text-street">Ulica <br> </span>
+          <div class="ad-category">
+            <span class="ad-category-text">KATEGORIJA</span>
+          </div>
+        </div>
+        <div class="second-container">
+          <span class="application-deadline-text">PRIJAVE DO DD/MM/YYYY <br></span>
+          <button type='button' aria-label='Pritisnuti za prijavu'
+            class='button-apply'>PRIJAVI SE
+          </button>
+        </div>
+        <div class="ad-description-container">
+          <h2 class="ad-description-title">Opis posla</h2>
+          <p class="ad-description-text">From your account dashboard you can view your
+            recent orders, manage your shipping and billing addresses, and edit <br>
+            your password and account details.</p>
+          <p class="fee-text"> Naknada: 30 kn/h</p>
+        </div>
+      </div>
     </div>
 
     <footer>
