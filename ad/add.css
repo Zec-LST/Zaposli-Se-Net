@@ -74,9 +74,9 @@ header h1 {
 .employer-details-container {
   float:left;
   box-shadow: 0px 6px 40px 5px rgba(0, 0, 0, 0.05);
-  width: 300px;
-  height: 440px;
-  margin-left: 10%;
+  width: 250px;
+  height: 400px;
+  margin-left: 50px;
   margin-top: 5%;
 }
 
@@ -116,13 +116,13 @@ header h1 {
 .ad-details-container {
   float:left;
   margin-top: 5%;
-  margin-left: 10%;
   overflow: hidden;
 }
 
 .first-container {
   float: left;
-  height: 150px;
+  height: 140px;
+  margin-left: 50px;
 }
 
 .address-container {
@@ -155,22 +155,23 @@ header h1 {
 .second-container {
   float: left;
   height: 150px;
-  margin-left: 400px;
+  margin-left: 180px;
+  margin-top: 10px;
 }
 
 .application-deadline-text {
   font-family: Poppins;
   font-style: normal;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 16px;
   color: #828282;
 }
 
 .button-apply {
   text-align: center;
   border: 3px solid #464660;
-  width: 300px;
-  height: 75px;
+  width: 200px;
+  height: 60px;
   font-family: Poppins;
   font-style: normal;
   font-weight: 600;
@@ -200,6 +201,7 @@ header h1 {
 
 .ad-description-container {
   margin-top: 170px;
+  margin-left: 50px;
 }
 
 .ad-description-title {
@@ -224,9 +226,9 @@ header h1 {
   font-family: Poppins;
   font-style: normal;
   font-weight: 600;
-  font-size: 24px;
+  font-size: 22px;
   margin-left: 25px;
-  margin-top: 140px;
+  margin-top: 80px;
 }
 
 /* FOOTER */
