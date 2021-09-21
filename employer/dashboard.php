@@ -5,9 +5,8 @@
     if (file_exists("../database/ads.php")) {
         require_once("../database/ads.php");
     }
-    $ads = $ads_table->retrieveAds();
     $id = $_COOKIE['employer'];
-
+    $ads = $ads_table->retreiveAdsByEmployerId($id);
 ?>
 
 <!DOCTYPE html>
@@ -32,9 +31,9 @@
     </header>
 
     <div class="page-content">
-      <button class="add-button" type="button" name="button" onclick="/">
-        Dodaj oglas</button>
-      <table class="table products-table">
+      <button class="add-button" type="button" name="button"
+        onclick="window.location.href='./add.php'">Dodaj oglas</button>
+      <table class="table ads-table">
         <thead>
           <tr>
             <th scope="col">Naziv</th>
@@ -45,20 +44,23 @@
           </tr>
         </thead>
         <tbody>
-          <?php foreach($ads as $ad): ?>
+          <?php while($row = $ads->fetch()): ?>
             <tr>
-              <td label='Naziv:'><?php echo $ad[1]; ?></td>
-              <td label='Mjesto:'><?php echo $ad[2]; ?></td>
-              <td label='Kategorija:'><?php echo $ad[3]; ?></td>
-              <td label='Prijave do:'><?php echo $ad[4]; ?></td>
+              <td label='Naziv:'><?php echo $row["ad_title"]; ?></td>
+              <td label='Mjesto:'><?php echo $row["ad_city"]; ?></td>
+              <td label='Kategorija:'><?php echo $row["ad_category"]; ?></td>
+              <td label='Prijave do:'><?php echo $row["ad_expire_time"]; ?></td>
               <td>
-                <button id="<?php echo $ad[0]; ?>" class="add-ad-button"
-                  type="button" name="button" onclick="/">UREDI</button>
+                <button id="<?php echo $row["ad_id"]; ?>" class="add-ad-button"
+                  data-rel="back" type="button" name="button"
+                  onclick="openUpdatePage(this.id)">UREDI</button>
               </td>
             </tr>
-          <?php endforeach; ?>
+          <?php endwhile; ?>
         </tbody>
       </table>
+      <button class="logout-button"type="button" name="button"
+        onclick="window.location.href='../auth/logout.php'">Odjavi se</button>
     </div>
 
     <footer>
@@ -100,7 +102,9 @@
     </footer>
 
     <script type="text/javascript">
-
+      function openUpdatePage(id) {
+        window.location.href='./update.php?id='+id;
+      }
     </script>
   </body>
 </html>
