@@ -90,12 +90,67 @@ header h1 {
   cursor: pointer;
 }
 
-.add-button:after {
-  content: '+';
-  position: absolute;
-  opacity: 0;
-  top: 14px;
-  right: -20px;
+.ads-table {
+  border-collapse: collapse;
+  font-size: 0.9em;
+  font-family: Poppins;
+  min-width: 200px;
+  margin-top: 24px;
+  margin: auto;
+  width: 90%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.ads-table thead tr {
+    background-color: #F7F7F7;
+    color: #0B0B0C;
+    text-align: left;
+    font-weight: 700;
+}
+
+.ads-table th,
+.ads-table td {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+.ads-table td {
+    font-weight: 300;
+}
+
+.ads-table tbody tr:nth-of-type(even) {
+    background-color: #F7F7F7;
+}
+
+.add-ad-button {
+  padding: 1em 1em;
+  border: 0px;
+  background-color: transparent;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  color: #464660;
+}
+
+.logout-button {
+  text-align: center;
+  border: 3px solid #464660;
+  width: 300px;
+  height: 75px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  color: #464660;
+  background-color: white;
+  margin-right: 60px;
+  margin: 64px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  float: right;
+  cursor: pointer;
 }
 
 /* FOOTER */

@@ -4,16 +4,10 @@
   require_once("../database/users.php");
 
   $id = $_GET['id'];
-<<<<<<< HEAD
   $adDB = $ads_table->retreiveAdById($id);
   $ad = $adDB->fetch();
   $employerDB = $users_table->retrieveUserById($ad['employer_id']);
   $employer = $employerDB->fetch();
-=======
-  $ad = $ads_table->retreiveAdById($id);
-  $employer = users_table->retrieveUserById($ad[])
-
->>>>>>> dev
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
