@@ -1,6 +1,6 @@
 <?php
     if(!isset($_COOKIE['employer'])){
-        header("Location: ./auth/login.php");
+        header("Location: ../auth/login.php");
     }
     if (file_exists("../database/ads.php")) {
         require_once("../database/ads.php");
