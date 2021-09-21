@@ -1,5 +1,10 @@
 <?php
 
+  require_once("../database/ads.php");
+
+  $id = $_GET['id'];
+  $ad = $ads_table -> retreiveAdById($id);
+
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
