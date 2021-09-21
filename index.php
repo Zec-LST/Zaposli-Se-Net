@@ -4,11 +4,20 @@
   require_once("./database/users.php");
   require_once("./database/ads.php");
 
+<<<<<<< HEAD
+  $selected_category = "all-countries";
+  $selected_county = "all-categories";
+
+  $counties = $counties_table->retrieveCounties();
+  $categories = $categories_table->retrieveCategories();
+=======
   $counties = $counties_table->retrieveCounties();
   $categories = $categories_table->retrieveCategories();
 
   $ads = $ads_table->retrieveAds();
+>>>>>>> dev
 
+  $ads = $ads_table->retrieveAds();
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -23,7 +32,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
-
     <header>
       <div class="logo">
         <a href="/">Zaposlise.net</a>
@@ -79,6 +87,10 @@
               <div class="filter">
                 <label for="county">Županija</label>
                 <select name="county" id="county">
+<<<<<<< HEAD
+                  <option value="all-counties">Sve</option>
+=======
+>>>>>>> dev
                   <?php while ($row = $counties->fetch()) :?>
                   <option value="<?= $row['county_name'] ?>"><?= $row['county_name'] ?></option>
                   <?php endwhile; ?>
@@ -87,6 +99,10 @@
               <div class="filter">
                 <label for="category">Kategorija posla</label>
                 <select name="category" id="category">
+<<<<<<< HEAD
+                  <option value="all-categories">Sve</option>
+=======
+>>>>>>> dev
                   <?php while ($row = $categories->fetch()) :?>
                   <option value="<?= $row['category_name'] ?>"><?= $row['category_name'] ?></option>
                   <?php endwhile; ?>
@@ -95,10 +111,17 @@
             </div>
           </div>
 
+<<<<<<< HEAD
+          <div id="jobs-list" class="jobs-list">
+            <?php while ($row = $ads->fetch()) : ?>
+            <div class="job-item" id=<?= htmlspecialchars($row['ad_id']) ?>>
+              <img id="<?= htmlspecialchars($row['ad_id']) ?>" class="ad-item-img" src=<?= htmlspecialchars($row['ad_image'])?> alt="" onclick="openAdDetailsPage(this.id)">
+=======
           <div class="jobs-list">
             <?php while ($row = $ads->fetch()) : ?>
             <div class="job-item" id=<?= htmlspecialchars($row['product_id']) ?>>
               <img class="ad-item-img" src=<?= htmlspecialchars($row['ad_image'])?> alt="">
+>>>>>>> dev
               <div class="place-and-category">
                   <p class="job-place"><?= htmlspecialchars($row['ad_city'])?></p>
                   <div class="job-category"><?= htmlspecialchars($row['ad_category'])?></div>
@@ -149,9 +172,36 @@
        </div>
      </div>
     </footer>
-
     <script type="text/javascript">
+      const countySelect = document.getElementById('county');
+      const categorySelect = document.getElementById('category');
 
+      countySelect.addEventListener('change', function() {
+        sendAjaxRequest();
+      });
+
+      categorySelect.addEventListener('change', function() {
+        sendAjaxRequest();
+      });
+
+      function sendAjaxRequest() {
+        const xhttp = new XMLHttpRequest();
+        xhttp.open("POST", "./filter-county-response.php", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send(`county=${countySelect.value}&category=${category.value}`);
+
+        xhttp.onreadystatechange = function() {
+            if (this.readyState = 4 && this.status == 200) {
+              document.getElementById('jobs-list').innerHTML = "";
+              console.log(this.responseText);
+              document.getElementById('jobs-list').innerHTML = this.responseText;
+            }
+        };
+      }
+
+      function openAdDetailsPage(id) {
+        window.location.href='./ad/ad.php?id='+id;
+      }
     </script>
   </body>
 </html>

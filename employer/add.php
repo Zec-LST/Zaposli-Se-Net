@@ -109,7 +109,7 @@
   </head>
   <body>
     <header>
-      <a class="back-btn" href="/">< Nazad</a>
+      <a class="back-btn" href="./dashboard.php">< Nazad</a>
       <h1>Novi oglas</h1>
       <div class="logo">
         <a href="/">Zaposlise.net</a>

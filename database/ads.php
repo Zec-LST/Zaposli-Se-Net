@@ -187,7 +187,11 @@
             );
 
             $query = <<<EOSQL
+<<<<<<< HEAD
+                    UPDATE $this->tableName SET ad_image=:image, ad_street=:street, ad_city=:city, ad_county=:county, ad_category=:category, ad_title=:title, ad_description=:description, ad_expire_time=:expire_time, ad_wage=:wage, employer_id=:employer_id WHERE ad_id=:id;
+=======
                     UPDATE $this->tableName SET ad_image=:image, ad_street=:street, ad_city=:city, ad_county=:county, ad_category=:category, ad_title=:title, ad_description=:ad_description, ad_expire_time=:expire_time, ad_wage=:wage, employer_id=:employer_id WHERE ad_id=:id;
+>>>>>>> dev
                 EOSQL;
 
 
