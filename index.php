@@ -1,9 +1,4 @@
 <?php
-
-  if(!isset($_COOKIE['employer'])){
-    header("Location: ./auth/login.php");
-  }
-
   require_once("./database/counties.php");
   require_once("./database/categories.php");
   require_once("./database/users.php");
