@@ -1,5 +1,7 @@
 <?php
-
+  if(isset($_COOKIE['employer'])){
+      header("Location: ../employer/dashboard.php");
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -23,7 +25,7 @@
     </header>
 
     <div class="page-content">
-      <form class="login-form">
+      <form class="login-form" action="../database/validate.php" method="post">
         <div class="login-container">
           <div class="login-left-container">
               <div class="input-container">

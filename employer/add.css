@@ -14,17 +14,18 @@
 body {
   max-width: 1920px;
   margin: auto;
+  font-family: Poppins;
 }
 
 header {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  flex-wrap: wrap;
   align-items: center;
   max-width: 1664px;
   height: auto;
   margin: auto;
+  flex-wrap: wrap-reverse;
   margin-top: 40px;
 }
 
@@ -62,22 +63,127 @@ header h1 {
   font-family: Poppins;
   font-weight: 300;
   font-size: 2.25em;
+  margin-left: 40px;
+  margin-right: 40px;
   color: var(--primary-color);
 }
 
 /*PAGE CONTENT*/
 .page-content {
   width: 100%;
+}
+
+/* MAIN SECTION */
+
+.add-ad-form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  padding: 5%;
+  margin: 5% auto;
+  align-items: center;
+  background: #F7F7F7;
+}
+
+.inputs {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  font-size: 0.8em;
+  color: var(--text-color-extra-light);
+  font-weight: 600;
+  margin-top: 24px;
+  padding-left: 4px;
+}
+
+.filter {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 12px;
+}
+
+.filter select, .inputs input, textarea {
+  width: 100%;
+  height: 40px;
+  border:1px solid #EBEBEB;
+  outline: none;
+  border-radius: 10px;
+  font-family: Poppins;
+  font-weight: 300;
+  font-size: 1em;
+  color: var(--text-color-dark);
+  padding-left: 12px;
+  position: relative;
+}
+
+#salary, #date {
+    width: 280px;
+}
+
+#description {
+  height: 100px;
+  resize: none;
+}
+
+.submit-button, .delete-btn {
+  border: 3px solid #464660;
+  border-radius: 4px;
+  text-transform: uppercase;
+  background: #F7F7F7;
+  font-weight: 600;
+  color: #464660;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-size: 1.2em;
+  display: inline;
+  margin-top: 40px;
+  outline: none;
+  width: 340px;
+  transition: all .5s ease;
+}
+
+.delete-btn {
+    border: 3px solid red;
+    color: red;
+}
+
+.submit-button:hover {
+    color: white;
+    background-color: #464660;
+}
+
+.delete-btn:hover {
+  color: white;
+  background-color: red;
+}
+
+.location-title {
+  margin-top: 40px;
+  width: 280px;
+  color: var(--primary-color);
+  font-weight: 600;
+  border-bottom: 1px solid  var(--primary-color);
+  width: 80%;
   height: 600px;
   overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
 }
 
 .employer-details-container {
   float:left;
   box-shadow: 0px 6px 40px 5px rgba(0, 0, 0, 0.05);
-  width: 300px;
-  height: 440px;
-  margin-left: 10%;
+  width: 250px;
+  height: 400px;
+  margin-left: 50px;
   margin-top: 5%;
 }
 
@@ -117,13 +223,13 @@ header h1 {
 .ad-details-container {
   float:left;
   margin-top: 5%;
-  margin-left: 10%;
   overflow: hidden;
 }
 
 .first-container {
   float: left;
-  height: 150px;
+  height: 140px;
+  margin-left: 50px;
 }
 
 .address-container {
@@ -156,22 +262,23 @@ header h1 {
 .second-container {
   float: left;
   height: 150px;
-  margin-left: 400px;
+  margin-left: 180px;
+  margin-top: 10px;
 }
 
 .application-deadline-text {
   font-family: Poppins;
   font-style: normal;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 16px;
   color: #828282;
 }
 
 .button-apply {
   text-align: center;
   border: 3px solid #464660;
-  width: 300px;
-  height: 75px;
+  width: 200px;
+  height: 60px;
   font-family: Poppins;
   font-style: normal;
   font-weight: 600;
@@ -201,6 +308,7 @@ header h1 {
 
 .ad-description-container {
   margin-top: 170px;
+  margin-left: 50px;
 }
 
 .ad-description-title {
@@ -225,9 +333,9 @@ header h1 {
   font-family: Poppins;
   font-style: normal;
   font-weight: 600;
-  font-size: 24px;
+  font-size: 22px;
   margin-left: 25px;
-  margin-top: 140px;
+  margin-top: 80px;
 }
 
 /* FOOTER */
@@ -314,6 +422,10 @@ footer {
   .footer-social-privacy {
       flex-direction: column;
   }
+
+  .add-ad-form {
+    width: 95%;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -345,4 +457,9 @@ footer {
     margin-top: 16px;
     margin-left: 0px;
   }
+
+  .back-btn {
+    margin-left: 4px;
+  }
+
 }

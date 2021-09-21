@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>ad</title>
-    <link rel='stylesheet' href='add.css'/>
+    <link rel='stylesheet' href='ad.css'/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -51,8 +51,8 @@
         </div>
         <div class="ad-description-container">
           <h2 class="ad-description-title">Opis posla</h2>
-          <p class="ad-description-text">From your account dashboard you can view your
-            recent orders, manage your shipping and billing addresses, and edit <br>
+          <p class="ad-description-text">From your account dashboard you can view your <br>
+            recent orders, manage your shipping and billing <br> addresses, and edit
             your password and account details.</p>
           <p class="fee-text"> Naknada: 30 kn/h</p>
         </div>
