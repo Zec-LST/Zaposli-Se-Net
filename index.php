@@ -4,18 +4,11 @@
   require_once("./database/users.php");
   require_once("./database/ads.php");
 
-<<<<<<< HEAD
   $selected_category = "all-countries";
   $selected_county = "all-categories";
 
   $counties = $counties_table->retrieveCounties();
   $categories = $categories_table->retrieveCategories();
-=======
-  $counties = $counties_table->retrieveCounties();
-  $categories = $categories_table->retrieveCategories();
-
-  $ads = $ads_table->retrieveAds();
->>>>>>> dev
 
   $ads = $ads_table->retrieveAds();
 ?>
@@ -87,10 +80,7 @@
               <div class="filter">
                 <label for="county">Županija</label>
                 <select name="county" id="county">
-<<<<<<< HEAD
                   <option value="all-counties">Sve</option>
-=======
->>>>>>> dev
                   <?php while ($row = $counties->fetch()) :?>
                   <option value="<?= $row['county_name'] ?>"><?= $row['county_name'] ?></option>
                   <?php endwhile; ?>
@@ -99,10 +89,7 @@
               <div class="filter">
                 <label for="category">Kategorija posla</label>
                 <select name="category" id="category">
-<<<<<<< HEAD
                   <option value="all-categories">Sve</option>
-=======
->>>>>>> dev
                   <?php while ($row = $categories->fetch()) :?>
                   <option value="<?= $row['category_name'] ?>"><?= $row['category_name'] ?></option>
                   <?php endwhile; ?>
@@ -111,17 +98,10 @@
             </div>
           </div>
 
-<<<<<<< HEAD
           <div id="jobs-list" class="jobs-list">
             <?php while ($row = $ads->fetch()) : ?>
             <div class="job-item" id=<?= htmlspecialchars($row['ad_id']) ?>>
               <img id="<?= htmlspecialchars($row['ad_id']) ?>" class="ad-item-img" src=<?= htmlspecialchars($row['ad_image'])?> alt="" onclick="openAdDetailsPage(this.id)">
-=======
-          <div class="jobs-list">
-            <?php while ($row = $ads->fetch()) : ?>
-            <div class="job-item" id=<?= htmlspecialchars($row['product_id']) ?>>
-              <img class="ad-item-img" src=<?= htmlspecialchars($row['ad_image'])?> alt="">
->>>>>>> dev
               <div class="place-and-category">
                   <p class="job-place"><?= htmlspecialchars($row['ad_city'])?></p>
                   <div class="job-category"><?= htmlspecialchars($row['ad_category'])?></div>
