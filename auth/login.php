@@ -38,7 +38,7 @@
                 <input class="login-input" type="password" name="password" id="user_password" >
               </div>
 
-              <button type='button' aria-label='Pritisnuti za prijavu'
+              <button type='submit' aria-label='Pritisnuti za prijavu'
                 class='button-login'>PRIJAVI SE
               </button>
 

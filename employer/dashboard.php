@@ -7,7 +7,7 @@
     }
     $ads = $ads_table->retrieveAds();
     $id = $_COOKIE['employer'];
-    $ads_table->deleteAd(1);
+
 ?>
 
 <!DOCTYPE html>
