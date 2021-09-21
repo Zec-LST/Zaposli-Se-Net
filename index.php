@@ -4,8 +4,10 @@
   require_once("./database/users.php");
   require_once("./database/ads.php");
 
+  $counties = $counties_table->retrieveCounties();
+  $categories = $categories_table->retrieveCategories();
+
   $ads = $ads_table->retrieveAds();
-  $id = $_COOKIE['employer'];
 
 ?>
 <!DOCTYPE html>
@@ -77,33 +79,34 @@
               <div class="filter">
                 <label for="county">Županija</label>
                 <select name="county" id="county">
-                  <option value="volvo">Sve</option>
-                  <option value="volvo">Osječko-baranjska</option>
-                  <option value="saab">Zagrebačka</option>
-                  <option value="mercedes">Požeško-slavonska</option>
-                  <option value="audi">Dubrovačka</option>
+                  <?php while ($row = $counties->fetch()) :?>
+                  <option value="<?= $row['county_name'] ?>"><?= $row['county_name'] ?></option>
+                  <?php endwhile; ?>
                 </select>
               </div>
               <div class="filter">
                 <label for="category">Kategorija posla</label>
-                <select name="category" id="county">
-                  <option value="volvo">Sve</option>
-                  <option value="volvo">Studentski posao</option>
+                <select name="category" id="category">
+                  <?php while ($row = $categories->fetch()) :?>
+                  <option value="<?= $row['category_name'] ?>"><?= $row['category_name'] ?></option>
+                  <?php endwhile; ?>
                 </select>
               </div>
             </div>
           </div>
 
           <div class="jobs-list">
-            <div class="job-item">
-              <img class="ad-item-img" src="" alt="">
+            <?php while ($row = $ads->fetch()) : ?>
+            <div class="job-item" id=<?= htmlspecialchars($row['product_id']) ?>>
+              <img class="ad-item-img" src=<?= htmlspecialchars($row['ad_image'])?> alt="">
               <div class="place-and-category">
-                  <p class="job-place">Osijek</p>
-                  <div class="job-category">Studentski posao</div>
+                  <p class="job-place"><?= htmlspecialchars($row['ad_city'])?></p>
+                  <div class="job-category"><?= htmlspecialchars($row['ad_category'])?></div>
               </div>
-              <p class="job-title">Prodajni predstavnik</p>
-              <p class="job-date">Prijave do 30.rujna 2021.</p>
+              <p class="job-title"><?= htmlspecialchars($row['ad_title'])?></p>
+              <p class="job-date">Prijave do: <?= htmlspecialchars($row['ad_expire_time'])?></p>
             </div>
+             <?php endwhile; ?>
         </div>
           <a class="show-all-button" href="/">Pogledaj sve ></a>
       </div>

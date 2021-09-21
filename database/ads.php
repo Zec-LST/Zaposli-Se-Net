@@ -25,7 +25,7 @@
             $this->createTableIfNotExist();
 
             if (count($this->retrieveAds()->fetchAll()) == 0) {
-                $this->insert("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.jpD63kYxdmBKXV4M6sJliAHaE6%26pid%3DApi&f=1", "Istarska","Osijek","Osječko-baranjska županija","Studentski posao","Opis","23.9.2021.",30,1);
+                $this->insert("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.jpD63kYxdmBKXV4M6sJliAHaE6%26pid%3DApi&f=1", "Istarska","Osijek","Osječko-baranjska županija","Studentski posao","Opis","Konobar","23.9.2021.",30,1);
             }
         }
 
@@ -42,6 +42,7 @@
                 ad_city              VARCHAR(50) NOT NULL,
                 ad_county            VARCHAR(50) NOT NULL,
                 ad_category          VARCHAR(50) NOT NULL,
+                ad_title             TEXT DEFAULT NULL,
                 ad_description       TEXT DEFAULT NULL,
                 ad_expire_time       TEXT DEFAULT NULL,
                 ad_wage              FLOAT DEFAULT NULL,
@@ -55,13 +56,14 @@
             $this->conn->exec($query);
         }
 
-        public function insert($ad_image, $ad_street, $ad_city, $ad_county, $ad_category, $ad_description, $ad_expire_time, $ad_wage, $employer_id) {
+        public function insert($ad_image, $ad_street, $ad_city, $ad_county, $ad_category, $ad_title, $ad_description, $ad_expire_time, $ad_wage, $employer_id) {
             $ad = array(
                 ':image' => $ad_image,
                 ':street' => $ad_street,
                 ':city' => $ad_city,
                 ':county' => $ad_county,
                 ':category' => $ad_category,
+                ':title' => $ad_title,
                 ':description' => $ad_description,
                 ':expire_time' => $ad_expire_time,
                 ':wage' => $ad_wage,
@@ -69,7 +71,7 @@
             );
 
             $query = <<<EOSQL
-                INSERT INTO $this->tableName(ad_image, ad_street, ad_city, ad_county, ad_category, ad_description, ad_expire_time, ad_wage, employer_id) VALUES(:image,:street,:city,:county,:category,:description,:expire_time,:wage,:employer_id);
+                INSERT INTO $this->tableName(ad_image, ad_street, ad_city, ad_county, ad_category, ad_title, ad_description, ad_expire_time, ad_wage, employer_id) VALUES(:image,:street,:city,:county,:category,:title,:description,:expire_time,:wage,:employer_id);
             EOSQL;
 
             $stmt = $this->conn->prepare($query);
@@ -117,7 +119,7 @@
 
         public function retreiveAdsByEmployerId($id){
             $query = <<<EOSQL
-                SELECT * FROM $this->tableName WHERE employer_id=:id LIMIT 1;
+                SELECT * FROM $this->tableName WHERE employer_id=:id;
             EOSQL;
 
             $stmt = $this->conn->prepare($query);
@@ -135,7 +137,7 @@
 
         public function retreiveAdsByCounty($county){
             $query = <<<EOSQL
-                SELECT * FROM $this->tableName WHERE ad_county=:county LIMIT 1;
+                SELECT * FROM $this->tableName WHERE ad_county=:county;
             EOSQL;
 
             $stmt = $this->conn->prepare($query);
@@ -153,7 +155,7 @@
 
         public function retreiveAdsByCategory($category){
             $query = <<<EOSQL
-                SELECT * FROM $this->tableName WHERE ad_category=:category LIMIT 1;
+                SELECT * FROM $this->tableName WHERE ad_category=:category;
             EOSQL;
 
             $stmt = $this->conn->prepare($query);
@@ -169,13 +171,14 @@
             }
         }
 
-        public function update($ad_image,$ad_street,$ad_city,$ad_county, $ad_category, $ad_description, $ad_expire_time, $ad_wage, $employer_id, $id) {
+        public function update($ad_image,$ad_street,$ad_city,$ad_county, $ad_category, $ad_title, $ad_description, $ad_expire_time, $ad_wage, $employer_id, $id) {
             $ad = array(
                 ':image' => $ad_image,
                 ':street' => $ad_street,
                 ':city' => $ad_city,
                 ':county' => $ad_county,
                 ':category' => $ad_category,
+                ':title' => $ad_title,
                 ':description' => $ad_description,
                 ':expire_time' => $ad_expire_time,
                 ':wage' => $ad_wage,
@@ -184,9 +187,9 @@
             );
 
             $query = <<<EOSQL
-                    UPDATE $this->tableName SET ad_image=:image, ad_street=:street, ad_city=:city, ad_county=:county, ad_category=:category, ad_description=:ad_description, ad_expire_time=:expire_time, ad_wage=:wage, employer_id=:employer_id WHERE ad_id=:id;
-                EOSQL;  
-            
+                    UPDATE $this->tableName SET ad_image=:image, ad_street=:street, ad_city=:city, ad_county=:county, ad_category=:category, ad_title=:title, ad_description=:ad_description, ad_expire_time=:expire_time, ad_wage=:wage, employer_id=:employer_id WHERE ad_id=:id;
+                EOSQL;
+
 
                 $stmt = $this->conn->prepare($query);
 
@@ -201,7 +204,7 @@
             $query = <<<EOSQL
                 DELETE FROM $this->tableName WHERE ad_id=:id;
             EOSQL;
-            
+
             $stmt = $this->conn->prepare($query);
 
             $stmt->bindParam(':id', $id);

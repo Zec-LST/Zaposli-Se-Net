@@ -1,5 +1,12 @@
 <?php
 
+  require_once("../database/ads.php");
+  require_once("../database/users.php");
+
+  $id = $_GET['id'];
+  $ad = $ads_table->retreiveAdById($id);
+  $employer = users_table->retrieveUserById($ad[])
+
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">

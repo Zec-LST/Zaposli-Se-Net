@@ -1,7 +1,98 @@
 <?php
-    if(!isset($_COOKIE['employer'])){
-        header("Location: ../auth/login.php");
+
+  require_once("../database/counties.php");
+  require_once("../database/categories.php");
+  require_once("../database/ads.php");
+
+  if(!isset($_COOKIE['employer'])){
+      header("Location: ../auth/login.php");
+  }
+
+  $counties = $counties_table->retrieveCounties();
+  $categories = $categories_table->retrieveCategories();
+
+  if($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $url = $street = $city = $county = $category = $title = $description = $expire_time = $wage = $date = '';
+
+    $county = $_POST['county'];
+    $category = $_POST['category'];
+    $date = $_POST['date'];
+    $employer_id = $_COOKIE['employer'];
+
+    // check url
+    $urlInput = $_POST['url'];
+    if(empty($urlInput)){
+      $urlError = "Polje ne može ostati prazno!";
+    } else {
+      if(filter_var($urlInput, FILTER_VALIDATE_URL)){
+        $url = trim(htmlspecialchars($urlInput));
+      } else {
+        $urlError = "Molimo unesite ispravan URL!";
+      }
     }
+
+    // check title
+    $titleInput = $_POST['title'];
+    if(empty($titleInput)) {
+      $titleError = "Polje ne može ostati prazno!";
+    } else {
+      $title = $titleInput;
+    }
+
+    // check city
+    $cityInput = $_POST['city'];
+    if(empty($cityInput)) {
+      $cityError = "Polje ne može ostati prazno!";
+    } else {
+      $city = $cityInput;
+    }
+
+    // check street
+    $streetInput = $_POST['street'];
+    if(empty($streetInput)) {
+      $streetError = "Polje ne može ostati prazno!";
+    } else {
+      $street = $streetInput;
+    }
+
+    // check salary
+    $salaryInput = (float)$_POST['salary'];
+    if(empty($salaryInput)){
+      $salaryError = "Polje ne može ostati prazno!";
+    } else {
+      if(filter_var($salaryInput, FILTER_VALIDATE_FLOAT)){
+        $wage = trim(htmlspecialchars($salaryInput));
+      } else {
+        $salaryError = "Molimo unesite ispravnu satnicu!";
+      }
+    }
+
+    // check description
+    $descriptionInput = $_POST['description'];
+    if(empty($descriptionInput)) {
+      $descriptionError = "Polje ne može ostati prazno!";
+    } else {
+      $description = $descriptionInput;
+    }
+
+    if($url != '' &&
+      $title != '' &&
+      $wage != '' &&
+      $city != '' &&
+      $county != '' &&
+      $category != '' &&
+      $description != '' &&
+      $street != '' &&
+      $date != '' &&
+      $employer_id != ''
+    ) {
+      $ads_table->insert($url, $street, $city, $county, $category, $title, $description, $date, $wage, $employer_id);
+
+      $_SESSION["ad-list-updated"] = "true";
+      header("location: ./dashboard.php");
+    }
+  }
+
 ?>
 
 <!DOCTYPE html>
@@ -29,6 +120,7 @@
       <form class="add-ad-form" method="POST" action="">
         <div class="inputs">
           <label for="url">Naslov:</label>
+          <span class="error"><?php if (isset($titleError)) echo $titleError ?></span>
           <input type="text" name="title" id="title">
 
           <label for="url">URL slike:</label>
@@ -37,34 +129,39 @@
 
           <div class="filter">
             <label for="category">Kategorija posla</label>
-            <select name="category" id="county">
-              <option value="volvo">Studentski posao</option>
+            <select name="category" id="category">
+              <?php while ($row = $categories->fetch()) :?>
+              <option value="<?= $row['category_name'] ?>"><?= $row['category_name'] ?></option>
+              <?php endwhile; ?>
             </select>
           </div>
 
           <label for="salary">Satnica</label>
-          <input type="text" name="salary" id="salary">
+          <span class="error"><?php if (isset($salaryError)) echo $salaryError ?></span>
+          <input type="number" step="0.01" min="1" name="salary" id="salary">
 
           <label for="date">Prijave do</label>
           <input type="date" name="date" id="date" value="2021-09-23">
 
           <label for="description">Opis posla</label>
+          <span class="error"><?php if (isset($descriptionError)) echo $descriptionError ?></span>
           <textarea rows="5" cols = "60" type="text" name="description" id="description"></textarea>
 
           <p class="location-title">Informacije o lokaciji</p>
-          <label for="url">Ulica:</label>
+          <label for="street">Ulica:</label>
+          <span class="error"><?php if (isset($streetError)) echo $streetError ?></span>
           <input type="text" name="street" id="street">
 
-          <label for="url">Mjesto:</label>
-          <input type="text" name="place" id="place">
+          <label for="city">Mjesto:</label>
+          <span class="error"><?php if (isset($cityError)) echo $cityError ?></span>
+          <input type="text" name="city" id="city">
 
           <div class="filter">
             <label for="county">Županija</label>
             <select name="county" id="county">
-              <option value="volvo">Osječko-baranjska</option>
-              <option value="saab">Zagrebačka</option>
-              <option value="mercedes">Požeško-slavonska</option>
-              <option value="audi">Dubrovačka</option>
+              <?php while ($row = $counties->fetch()) :?>
+              <option value="<?= $row['county_name'] ?>"><?= $row['county_name'] ?></option>
+              <?php endwhile; ?>
             </select>
           </div>
         </div>
