@@ -129,7 +129,15 @@ form label {
   resize: none;
 }
 
+<<<<<<< HEAD
 .submit-button, .delete-btn {
+=======
+<<<<<<< HEAD
+.submit-button, .delete-btn {
+=======
+.submit-button {
+>>>>>>> dev
+>>>>>>> bafb29469090c5a0f31877b1ad733bab45faa121
   border: 3px solid #464660;
   border-radius: 4px;
   text-transform: uppercase;
@@ -138,12 +146,26 @@ form label {
   color: #464660;
   padding-top: 20px;
   padding-bottom: 20px;
+<<<<<<< HEAD
   padding-left: 40px;
   padding-right: 40px;
+=======
+<<<<<<< HEAD
+  padding-left: 40px;
+  padding-right: 40px;
+=======
+  padding-left: 60px;
+  padding-right: 60px;
+>>>>>>> dev
+>>>>>>> bafb29469090c5a0f31877b1ad733bab45faa121
   font-size: 1.2em;
   display: inline;
   margin-top: 40px;
   outline: none;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> bafb29469090c5a0f31877b1ad733bab45faa121
   width: 340px;
   transition: all .5s ease;
 }
@@ -153,16 +175,34 @@ form label {
     color: red;
 }
 
+<<<<<<< HEAD
+=======
+=======
+  width: 280px;
+  transition: all .5s ease;
+}
+
+>>>>>>> dev
+>>>>>>> bafb29469090c5a0f31877b1ad733bab45faa121
 .submit-button:hover {
     color: white;
     background-color: #464660;
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> bafb29469090c5a0f31877b1ad733bab45faa121
 .delete-btn:hover {
   color: white;
   background-color: red;
 }
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> dev
+>>>>>>> bafb29469090c5a0f31877b1ad733bab45faa121
 .location-title {
   margin-top: 40px;
   width: 280px;
