@@ -101,7 +101,7 @@
           <div id="jobs-list" class="jobs-list">
             <?php while ($row = $ads->fetch()) : ?>
             <div class="job-item" id=<?= htmlspecialchars($row['ad_id']) ?>>
-              <img class="ad-item-img" src=<?= htmlspecialchars($row['ad_image'])?> alt="">
+              <img id="<?= htmlspecialchars($row['ad_id']) ?>" class="ad-item-img" src=<?= htmlspecialchars($row['ad_image'])?> alt="" onclick="openAdDetailsPage(this.id)">
               <div class="place-and-category">
                   <p class="job-place"><?= htmlspecialchars($row['ad_city'])?></p>
                   <div class="job-category"><?= htmlspecialchars($row['ad_category'])?></div>
@@ -179,7 +179,9 @@
         };
       }
 
-
+      function openAdDetailsPage(id) {
+        window.location.href='./ad/ad.php?id='+id;
+      }
     </script>
   </body>
 </html>
