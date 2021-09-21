@@ -1,5 +1,7 @@
 <?php
-
+  if(isset($_COOKIE['employer'])){
+    header("Location: ../auth/login.php");
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -7,8 +9,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>ad</title>
-    <link rel='stylesheet' href='add.css'/>
+    <title>registration</title>
+    <link rel='stylesheet' href='auth.css'/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -16,47 +18,50 @@
   <body>
     <header>
       <a class="back-btn" href="/">< Nazad</a>
-      <h1>Title</h1>
+      <h1>Registracija</h1>
       <div class="logo">
         <a href="/">Zaposlise.net</a>
       </div>
     </header>
 
     <div class="page-content">
-      <div class="employer-details-container">
-        <h2 class="employer-details-title">Poslodavac</h2>
-        <img class="employer-photo" src="https://www.colorhexa.com/c4c4c4.png" alt="Slika poslodavca">
-        <div class="employer-details">
-          <h3 class="employer-details-text">Ime firme</h3>
-          <h3 class="employer-details-text">Adresa</h3>
-          <h3 class="employer-details-text">Kontakt broj</h3>
-        </div>
-      </div>
-      <div class="ad-details-container">
-        <div class="first-container">
-          <div class="address-container">
-            <img class="address-logo" src="/images/icon-location.svg" alt="Logo adrese">
-            <span class="address-text-city"> GRAD, ŽUPANIJA <br> </span>
+      <form class="registration-form">
+        <div class="registration-container">
+          <div class="registration-left-container">
+            <p>
+              <label for="name">Ime i prezime: </label> <br>
+              <input class="registration-input" type="text" name="name" id="user_name" >
+            </p>
+            <p>
+              <label for="email">E-mail: </label> <br>
+              <input class="registration-input" type="text" name="email" id="user_email" >
+            </p>
+            <p>
+              <label for="password">Lozinka: </label> <br>
+              <input class="registration-input" type="text" name="password" id="user_password" >
+            </p>
+            <p>
+              <label for="number">Kontakt broj: </label> <br>
+              <input class="registration-input" type="text" name="number" id="user_number" >
+            </p>
           </div>
-          <span class="address-text-street">Ulica <br> </span>
-          <div class="ad-category">
-            <span class="ad-category-text">KATEGORIJA</span>
+          <div class="registration-right-container">
+            <p>
+              <label for="company-name">Ime tvrtke: </label> <br>
+              <input class="registration-input" type="text" name="company-name" id="user_companyName" >
+            </p>
+            <p>
+              <label for="company-location">Sjedište tvrtke: </label> <br>
+              <input class="registration-input" type="text" name="company-location" id="user_companyLocation" >
+            </p>
+            <button type='button' aria-label='Pritisnuti za registaciju'
+              class='button-register'>REGISTRIRAJ SE
+            </button>
+            <p class="registration-text"><br>Već imaš kreiran račun?
+              <b>Prijavi se</b></p>
           </div>
         </div>
-        <div class="second-container">
-          <span class="application-deadline-text">PRIJAVE DO DD/MM/YYYY <br></span>
-          <button type='button' aria-label='Pritisnuti za prijavu'
-            class='button-apply'>PRIJAVI SE
-          </button>
-        </div>
-        <div class="ad-description-container">
-          <h2 class="ad-description-title">Opis posla</h2>
-          <p class="ad-description-text">From your account dashboard you can view your
-            recent orders, manage your shipping and billing addresses, and edit <br>
-            your password and account details.</p>
-          <p class="fee-text"> Naknada: 30 kn/h</p>
-        </div>
-      </div>
+      </form>
     </div>
 
     <footer>
