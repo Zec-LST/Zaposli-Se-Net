@@ -56,8 +56,8 @@
         </div>
         <div class="ad-description-container">
           <h2 class="ad-description-title">Opis posla</h2>
-          <p class="ad-description-text">From your account dashboard you can view your
-            recent orders, manage your shipping and billing addresses, and edit <br>
+          <p class="ad-description-text">From your account dashboard you can view your <br>
+            recent orders, manage your shipping and billing <br> addresses, and edit
             your password and account details.</p>
           <p class="fee-text"> Naknada: 30 kn/h</p>
         </div>
