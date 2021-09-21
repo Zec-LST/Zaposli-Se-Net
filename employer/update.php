@@ -1,6 +1,9 @@
 <?php
-
+    if(!isset($_COOKIE['employer'])){
+        header("Location: ../auth/login.php");
+    }
 ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
