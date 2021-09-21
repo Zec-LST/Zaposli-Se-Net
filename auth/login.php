@@ -1,5 +1,7 @@
 <?php
-
+  if(isset($_COOKIE['employer'])){
+      header("Location: ../employer/dashboard.php");
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -16,14 +18,38 @@
   <body>
     <header>
       <a class="back-btn" href="/">< Nazad</a>
-      <h1>Title</h1>
+      <h1>Prijava</h1>
       <div class="logo">
         <a href="/">Zaposlise.net</a>
       </div>
     </header>
 
     <div class="page-content">
+      <form class="login-form" action="../database/validate.php" method="post">
+        <div class="login-container">
+          <div class="login-left-container">
+              <div class="input-container">
+                <label for="email">E-mail: </label> <br>
+                <input class="login-input" type="text" name="email" id="user_email" >
+              </div>
 
+              <div class="input-container">
+                <label for="password">Lozinka: </label> <br>
+                <input class="login-input" type="password" name="password" id="user_password" >
+              </div>
+
+              <button type='submit' aria-label='Pritisnuti za prijavu'
+                class='button-login'>PRIJAVI SE
+              </button>
+
+              <div class="login-text"><p>Nemaš račun?
+                <b>Kreiraj ga</b></p>
+              </div>
+        </div>
+        <div class="login-right-container">
+          <img class="login-photo" src="..\images\image-login.png">
+        </div>
+      </form>
     </div>
 
     <footer>
