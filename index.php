@@ -1,4 +1,17 @@
 <?php
+
+  if(!isset($_COOKIE['employer'])){
+    header("Location: ./auth/login.php");
+  }
+
+  require_once("./database/counties.php");
+  require_once("./database/categories.php");
+  require_once("./database/users.php");
+  require_once("./database/ads.php");
+
+  $ads = $ads_table->retrieveAds();
+  $id = $_COOKIE['employer'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
