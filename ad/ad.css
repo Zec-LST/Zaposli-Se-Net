@@ -139,6 +139,7 @@ header h1 {
 }
 
 .address-text-city {
+  width: 220px;
   font-family: Poppins;
   font-style: normal;
   font-weight: 600;
@@ -188,19 +189,47 @@ header h1 {
   background-color: var(--primary-color);
   margin-top: 20px;
   margin-left: 25px;
-  width: 150px;
+  width: auto;
   height: 28px;
   border-radius: 50px;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .ad-category-text {
   font-family: Poppins;
   font-style: normal;
   font-weight: 600;
+  line-height: 28px;
   font-size: 16px;
   color: white;
 }
+
+
+.primary-button {
+  margin: auto;
+  border: 3px solid var(--primary-color);
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--primary-color);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-size: 1.2em;
+  display: inline;
+  margin-top: 40px;
+  outline: none;
+  background: white;
+  transition: all .5s ease;
+}
+
+.primary-button:hover {
+    color: white;
+    background-color: var(--primary-color);
+}
+
 
 .ad-description-container {
   margin-top: 170px;
