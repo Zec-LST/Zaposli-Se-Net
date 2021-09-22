@@ -27,6 +27,9 @@
             if (count($this->retrieveUsers()->fetchAll()) == 0) {
                 $this->insert("employer@employer.com", "employer123","http://www.naceweb.org/uploadedImages/images/2017/feature/employer-rescinds-job-offer.jpg","0955433333","Ferit");
                 $this->insert("mcdonalds@mcdonalds.com", "mcdonalds123","https://www.peterboroughtoday.co.uk/webimg/T0FLMTIzNTcwOTc3.jpg","0910910911","McDonalds");
+                $this->insert("slatka@tvornica.com", "slatka123", "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.mojnovisad.com%2Ffiles%2Fnews%2F7%2F2%2F6%2F28726%2F28726-tijana-ivkovic-kukicino05.jpg&f=1&nofb=1", "097672345", "Slatka Tvornica" );
+                $this->insert("it@city.com", "it123", "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.velinac.eu%2Fea%2Fwp-content%2Fuploads%2F2016%2F06%2FInfinum-8.jpg&f=1&nofb=1", "0912347869", "IT city");
+                $this->insert("gradim@zidam.com", "gradim123", "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F99%2F4b%2F08%2F994b085943d449f4fc6c6af37132c2e7.jpg&f=1&nofb=1", "098734562", "Gradim-Zidam");
             }
         }
 
