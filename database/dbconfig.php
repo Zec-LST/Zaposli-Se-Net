@@ -3,9 +3,9 @@
 final class DBConfig
 {
     const HOST = 'sql4.freesqldatabase.com';
-    const DB_NAME = 'sql4438613';
-    const USERNAME = 'sql4438613';
-    const PASSWORD = 'nMQd5n8dE4';
+    const DB_NAME = 'sql4439111';
+    const USERNAME = 'sql4439111';
+    const PASSWORD = 'laq8QEnJbr';
 
 
   /*  const HOST = 'db';
